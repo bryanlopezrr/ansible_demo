@@ -1,0 +1,10 @@
+---
+ - hosts: webapplications
+   become: true
+   tasks:
+     - name: => Install web tier tools to run application - Apache, Python, etc 
+       yum: name={{item}} state=present update_cache=yes
+       with_items:
+        - httpd
+        - python-pip
+        - python-virtualenv

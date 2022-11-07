@@ -1,0 +1,8 @@
+---
+ - hosts: databases
+   become: true
+   tasks:
+    - name: => Copy over Mongo .repo file for download
+      copy: src=config/mongodb-org-3.6.repo dest=/etc/yum.repos.d/ mode=0755
+    - name: => Installing Mongo database - EC2 specific
+      yum: name=mongodb-org state=present update_cache=yes 

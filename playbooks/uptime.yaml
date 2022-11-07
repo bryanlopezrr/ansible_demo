@@ -1,0 +1,5 @@
+---
+  - hosts: all
+    tasks:
+      - name: => Check uptime for each server in system 
+        command: uptime 

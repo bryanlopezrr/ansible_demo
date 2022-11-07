@@ -1,0 +1,24 @@
+[mongodb-org-3.6]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/3.6/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
+
+
+# The above is necessary for Mongo to be installed. Follow installation with next steps below: 
+# ESC + :wq
+# After that you can proceed with the steps in the documentation or in the old C9 Forum, but here they are just in case:
+
+# $ sudo yum install -y mongodb-org
+
+# $ sudo mkdir -p /data/db
+# $ echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > mongod
+# $ chmod a+x mongod
+# You can start mongodb by running the mongod script on your project root:
+
+# $ ./mongod
+# The last command might not run the mongodb local server, and you can find the solution for that here or just go ahead and run these two commands:
+
+# $ sudo service mongod stop
+# $ sudo mongod

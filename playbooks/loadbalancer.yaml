@@ -1,0 +1,10 @@
+---
+  - hosts: loadbalancer
+    become: yes
+    tasks: 
+    - name: => Install NGINX as a load-balancer - EC2 specific
+      command: amazon-linux-extras install nginx1=latest -y
+      args: 
+       creates: /sbin/nginx
+      #This is the traditional command, however for EC2 it differs
+      #yum: name=nginx state=present update_cache=yes
